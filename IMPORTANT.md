@@ -30,4 +30,4 @@ In Adonis, Controllers we create (adonis make:controller Name) are placed under 
 
 If for example we have a PostController with the method index that accepts request, response and view (called the HTTP context), we can use that method to render a view when the url we have mapped to the controller.method (use dot notation for folder structure!). Index calls the view.render method and passes in the view contained in views and any other data we wish to pass in, in an object.
 
-The Adonis template engine is used exactly like in Laravel: you can create your layout view that wraps around all appropriate views by using section blocks accordingly. Looping through arrays is done with each blocks.
+The Adonis template engine is used exactly like in Laravel: you can create your layout view that wraps around all appropriate views by using section blocks accordingly. Looping through arrays is done with each blocks. Including components into our views is done with the include block.
