@@ -1,5 +1,7 @@
 'use strict'
 
+const PostController = require('../app/Controllers/Http/PostController');
+
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -22,4 +24,13 @@ Route.on('/').render('home');
 //     return `Parameter id: ${params.id}`;
 // });
 
-Route.get('/posts', 'PostController.index');
+Route.group(() => {
+    Route.get('/', 'PostController.index');
+    Route.get('/add', 'PostController.add');
+    Route.get('/edit/:id', 'PostController.edit');
+    Route.get('/:id', 'PostController.details');
+    
+    Route.post('/', 'PostController.store');
+    Route.post('/:id/edit', 'PostController.update');
+    Route.delete('/:id/delete', 'PostController.destroy');
+}).prefix('/posts');

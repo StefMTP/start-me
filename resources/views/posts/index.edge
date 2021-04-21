@@ -1,11 +1,27 @@
 @layout('layouts/main')
 
 @section('content')
-<h1>{{ title }}</h1>
-
-<ul>
-    @each(post in posts)
-      <li>{{post.title}}</li>
-    @endeach
-</ul>
+  <h1>{{ title }}</h1>
+  @if(old('notification'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{old('notification')}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  @endif
+  <div class="row">
+      @each(post in posts)
+          <div class="col-sm-4 m-1">
+            <div class="card bg-secondary">
+              <a href="/posts/{{post.id}}">
+                <div class="card-body">
+                  <div class="card-title text-light">{{ post.title }}</div>
+                </div>
+              </a>
+            </div>
+          </div>
+      @endeach
+  </div>
+  <a href="/posts/add" class="btn btn-outline-primary">Add Post</a>
 @endsection
