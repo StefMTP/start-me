@@ -29,3 +29,24 @@ Run the following command to run startup migrations.
 ```js
 adonis migration:run
 ```
+
+----
+
+**I have checked out:**
+
+- Adonis Structure and Architecture
+- Requests
+- Views and Edge template engine
+- Forms
+- Models
+- Migrations
+- Input Validation
+- Flash Messages
+- CRUD Operations
+- Routing/Redirecting
+- Middleware
+- Exception Handlers
+- Authentication
+- Access Control and Conditional Rendering
+
+TODO: model relationships (user has many posts)

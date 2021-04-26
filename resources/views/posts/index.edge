@@ -2,6 +2,9 @@
 
 @section('content')
   <h1>{{ title }}</h1>
+  @if(auth.user)
+  <h2>Welcome, {{auth.user.username}}.</h2>
+  @endif
   @if(old('notification'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       {{old('notification')}}

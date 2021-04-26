@@ -1,5 +1,7 @@
 'use strict'
 
+const { RouteResource } = require('@adonisjs/framework/src/Route/Manager');
+const LoginController = require('../app/Controllers/Http/LoginController');
 const PostController = require('../app/Controllers/Http/PostController');
 
 /*
@@ -33,4 +35,14 @@ Route.group(() => {
     Route.post('/', 'PostController.store');
     Route.post('/:id/edit', 'PostController.update');
     Route.delete('/:id/delete', 'PostController.destroy');
-}).prefix('/posts');
+}).prefix('/posts').middleware(['auth']);
+
+Route.group(() => {
+    Route.get('/login', 'LoginController.index');
+    Route.get('/register', 'RegisterController.create');
+    
+    Route.post('/login', 'LoginController.login');
+    Route.post('/register', 'RegisterController.store');
+}).prefix('/auth').middleware(['guest']);
+
+Route.post('/auth/logout', 'LoginController.logout').middleware('auth');
