@@ -1,0 +1,18 @@
+@layout('layouts/main')
+
+@section('content')
+    <h1>{{ title }}</h1>
+    <div class="row">
+        @each(post in posts)
+            <div class="col-sm-4 m-1">
+              <div class="card bg-secondary">
+                <a href="/posts/{{post.id}}">
+                  <div class="card-body">
+                    <div class="card-title text-light">{{ post.title }}</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+        @endeach
+    </div>
+@endsection

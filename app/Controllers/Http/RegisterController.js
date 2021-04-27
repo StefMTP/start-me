@@ -60,9 +60,10 @@ class RegisterController {
 
       return response.redirect('back');
   }
-
+  
     user.username = request.input('username');
     user.email = request.input('email');
+    user.password = request.input('password');
 
     await user.save();
 
@@ -72,4 +73,4 @@ class RegisterController {
   }
 }
 
-module.exports = RegisterController
+module.exports = RegisterController;

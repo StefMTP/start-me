@@ -47,6 +47,7 @@ adonis migration:run
 - Middleware
 - Exception Handlers
 - Authentication
-- Access Control and Conditional Rendering
-
-TODO: model relationships (user has many posts)
+- Access Control and Conditional Rendering based on auth
+- Override the auto-incrementing id of posts to use uuid/v4
+- Model relationships (User has many Posts)
+- Access Control and Conditional Rendering based on post relationship to user

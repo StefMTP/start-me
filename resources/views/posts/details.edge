@@ -6,10 +6,12 @@
         <p class="lead">{{post.body}}</p>
 
     </div>
-    <a href="/posts/edit/{{ post.id }}" class="btn btn-outline-warning">Edit Post</a>
+    @if(auth.user.id === post.user_id)
+    <a href="/posts/{{ post.id }}/edit" class="btn btn-outline-warning">Edit Post</a>
     <form class="d-inline" action="{{ '/posts/' + post.id + '/delete' + '?_method=DELETE' }}" method="POST">
         {{ csrfField() }}
         <button class="btn btn-outline-danger">Delete Post</button>      
     </form>
+    @endif
     <a class="btn btn-outline-light" href="/posts">Go Back</a>
 @endsection

@@ -28,8 +28,9 @@ Route.on('/').render('home');
 
 Route.group(() => {
     Route.get('/', 'PostController.index');
+    Route.get('/mine', 'PostController.myIndex');
     Route.get('/add', 'PostController.add');
-    Route.get('/edit/:id', 'PostController.edit');
+    Route.get('/:id/edit', 'PostController.edit');
     Route.get('/:id', 'PostController.details');
     
     Route.post('/', 'PostController.store');
